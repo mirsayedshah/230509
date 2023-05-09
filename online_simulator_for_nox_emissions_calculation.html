@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+  <head>
+    <title>Response Optimization Simulator</title>
+    <link rel="icon" type="image/png" href="https://mdanish.me/links/danish.png">
+    <link rel="stylesheet" type="text/css" href="https://mdanish.me/links/stylesheet.css">
+  </head>
+
+
+<body>
+
+<br/>
+<section>
+      <p>This simulator tracks changes in model output in response to changes in environmental factors and input variable conditions.</p>
+<br/>
+
+
+<div align="center" style="display:block;text-align: center;">
+<!-- MENU OPTIONS HERE  -->
+<form style="display: inline-block;margin-left: auto; margin-right: auto;">
+
+
+<table border="1px" class="form">
+
+
+Response Optimization Simulator
+<br/>
+<!-- 0scaling layer -->
+<tr style="height:3.5em">
+<td> Ambient temperature (°C) </td>
+<td style="text-align:center">
+<input type="range" id="ambient_temperature" value="11.886" min="-6.23481" max="37.103" step="0.433378" onchange="updateTextInput1(this.value, 'ambient_temperature_text')" />
+<input class="tabla" type="number" id="ambient_temperature_text" value="11.886" min="-6.23481" max="37.103" step="0.433378" onchange="updateTextInput1(this.value, 'ambient_temperature')">
+</td>
+</tr>
+
+
+<!-- 1scaling layer -->
+<tr style="height:3.5em">
+<td> Ambient pressure (mb) </td>
+<td style="text-align:center">
+<input type="range" id="ambient_pressure" value="1031.38" min="985.85" max="1036.6" step="0.5075" onchange="updateTextInput1(this.value, 'ambient_pressure_text')" />
+<input class="tabla" type="number" id="ambient_pressure_text" value="1031.38" min="985.85" max="1036.6" step="0.5075" onchange="updateTextInput1(this.value, 'ambient_pressure')">
+</td>
+</tr>
+
+
+<!-- 2scaling layer -->
+<tr style="height:3.5em">
+<td> Ambient humidity (%) </td>
+<td style="text-align:center">
+<input type="range" id="ambient_humidity" value="65.673" min="24.085" max="100.2" step="0.76115" onchange="updateTextInput1(this.value, 'ambient_humidity_text')" />
+<input class="tabla" type="number" id="ambient_humidity_text" value="65.673" min="24.085" max="100.2" step="0.76115" onchange="updateTextInput1(this.value, 'ambient_humidity')">
+</td>
+</tr>
+
+
+<!-- 3scaling layer -->
+<tr style="height:3.5em">
+<td> Air filter difference pressure (mb) </td>
+<td style="text-align:center">
+<input type="range" id="air_filter_di_fference_pressure" value="4.123" min="2.0874" max="7.6106" step="0.055232" onchange="updateTextInput1(this.value, 'air_filter_di_fference_pressure_text')" />
+<input class="tabla" type="number" id="air_filter_di_fference_pressure_text" value="4.123" min="2.0874" max="7.6106" step="0.055232" onchange="updateTextInput1(this.value, 'air_filter_di_fference_pressure')">
+</td>
+</tr>
+
+
+<!-- 4scaling layer -->
+<tr style="height:3.5em">
+<td> Gas turbine exhaust pressure (mb) </td>
+<td style="text-align:center">
+<input type="range" id="gas_turbine_exhaust_pressure" value="17.844" min="17.698" max="40.716" step="0.23018" onchange="updateTextInput1(this.value, 'gas_turbine_exhaust_pressure_text')" />
+<input class="tabla" type="number" id="gas_turbine_exhaust_pressure_text" value="17.844" min="17.698" max="40.716" step="0.23018" onchange="updateTextInput1(this.value, 'gas_turbine_exhaust_pressure')">
+</td>
+</tr>
+
+
+<!-- 5scaling layer -->
+<tr style="height:3.5em">
+<td> Turbine inlet temperature (°C) </td>
+<td style="text-align:center">
+<input type="range" id="turbine_inlet_temperature" value="1004.76" min="1000.8" max="1100.9" step="1.001" onchange="updateTextInput1(this.value, 'turbine_inlet_temperature_text')" />
+<input class="tabla" type="number" id="turbine_inlet_temperature_text" value="1004.76" min="1000.8" max="1100.9" step="1.001" onchange="updateTextInput1(this.value, 'turbine_inlet_temperature')">
+</td>
+</tr>
+
+
+<!-- 6scaling layer -->
+<tr style="height:3.5em">
+<td> Turbine after temperature (°C) </td>
+<td style="text-align:center">
+<input type="range" id="turbine_after_temperature" value="543.572" min="511.04" max="550.61" step="0.3957" onchange="updateTextInput1(this.value, 'turbine_after_temperature_text')" />
+<input class="tabla" type="number" id="turbine_after_temperature_text" value="543.572" min="511.04" max="550.61" step="0.3957" onchange="updateTextInput1(this.value, 'turbine_after_temperature')">
+</td>
+</tr>
+
+
+<!-- 7scaling layer -->
+<tr style="height:3.5em">
+<td> Turbine energy yield (MWh) </td>
+<td style="text-align:center">
+<input type="range" id="turbine_energy_yield" value="10.708" min="9.8518" max="15.159" step="0.053072" onchange="updateTextInput1(this.value, 'turbine_energy_yield_text')" />
+<input class="tabla" type="number" id="turbine_energy_yield_text" value="10.708" min="9.8518" max="15.159" step="0.053072" onchange="updateTextInput1(this.value, 'turbine_energy_yield')">
+</td>
+</tr>
+
+
+<!-- 8scaling layer -->
+<tr style="height:3.5em">
+<td> CO (ppm) </td>
+<td style="text-align:center">
+<input type="range" id="CO" value="78.66" min="0.000386953" max="44.103" step="0.441026" onchange="updateTextInput1(this.value, 'CO_text')" />
+<input class="tabla" type="number" id="CO_text" value="78.66" min="0.000386953" max="44.103" step="0.441026" onchange="updateTextInput1(this.value, 'CO')">
+</td>
+</tr>
+</table>
+
+<br/>
+
+<div align="center">
+  <form>
+    <table border="1px" class="form" style="text-align:center">
+      <tr style="height:3.5em">
+        <td> NOx (mg/m³) </td>
+        <td>
+          <input style="text-align:center; padding-right:20px;" id="NOx" value="" type="text"  disabled/>
+        </td>
+      </tr>
+    </table>
+    <!-- BUTTON HERE -->
+    <button class="btn" onclick="neuralNetwork()">Output Calculation</button>
+	<br/>
+  </form>
+</div>
+
+</div>
+
+
+</section>
+
+
+<script>
+function neuralNetwork()
+{
+	var inputs = [];
+	var ambient_temperature = document.getElementById("ambient_temperature").value; 
+	inputs.push(ambient_temperature);
+	var ambient_pressure = document.getElementById("ambient_pressure").value; 
+	inputs.push(ambient_pressure);
+	var ambient_humidity = document.getElementById("ambient_humidity").value; 
+	inputs.push(ambient_humidity);
+	var air_filter_di_fference_pressure = document.getElementById("air_filter_di_fference_pressure").value; 
+	inputs.push(air_filter_di_fference_pressure);
+	var gas_turbine_exhaust_pressure = document.getElementById("gas_turbine_exhaust_pressure").value; 
+	inputs.push(gas_turbine_exhaust_pressure);
+	var turbine_inlet_temperature = document.getElementById("turbine_inlet_temperature").value; 
+	inputs.push(turbine_inlet_temperature);
+	var turbine_after_temperature = document.getElementById("turbine_after_temperature").value; 
+	inputs.push(turbine_after_temperature);
+	var turbine_energy_yield = document.getElementById("turbine_energy_yield").value; 
+	inputs.push(turbine_energy_yield);
+	var CO = document.getElementById("CO").value; 
+	inputs.push(CO);
+
+	var outputs = calculate_outputs(inputs); 
+	var NOx = document.getElementById("NOx");
+	NOx.value = outputs[0].toFixed(4);
+	update_LSTM();
+}
+
+function calculate_outputs(inputs)
+{
+	var ambient_temperature = +inputs[0];
+	var ambient_pressure = +inputs[1];
+	var ambient_humidity = +inputs[2];
+	var air_filter_di_fference_pressure = +inputs[3];
+	var gas_turbine_exhaust_pressure = +inputs[4];
+	var turbine_inlet_temperature = +inputs[5];
+	var turbine_after_temperature = +inputs[6];
+	var turbine_energy_yield = +inputs[7];
+	var CO = +inputs[8];
+
+	var scaled_ambient_temperature = (ambient_temperature-17.71269989)/7.447450161;
+	var scaled_ambient_pressure = (ambient_pressure-1013.070007)/6.463329792;
+	var scaled_ambient_humidity = (ambient_humidity-77.86699677)/14.46140003;
+	var scaled_air_filter_di_fference_pressure = (air_filter_di_fference_pressure-3.925519943)/0.7739359736;
+	var scaled_gas_turbine_exhaust_pressure = (gas_turbine_exhaust_pressure-25.56380081)/4.195960045;
+	var scaled_turbine_inlet_temperature = (turbine_inlet_temperature-1081.430054)/17.53639984;
+	var scaled_turbine_after_temperature = (turbine_after_temperature-546.1589966)/6.84236002;
+	var scaled_turbine_energy_yield = (turbine_energy_yield-12.06050014)/1.088799953;
+	var scaled_CO = (CO-2.372469902)/2.26267004;
+
+	var perceptron_layer_1_output_0 = Math.tanh( -0.380295 + (scaled_ambient_temperature*-0.519949) + (scaled_ambient_pressure*0.278811) + (scaled_ambient_humidity*0.00723753) + (scaled_air_filter_di_fference_pressure*0.181552) + (scaled_gas_turbine_exhaust_pressure*0.457739) + (scaled_turbine_inlet_temperature*-0.124874) + (scaled_turbine_after_temperature*-0.265811) + (scaled_turbine_energy_yield*-0.315751) + (scaled_CO*0.00903988) );
+	var perceptron_layer_1_output_1 = Math.tanh( 1.02069 + (scaled_ambient_temperature*0.00912198) + (scaled_ambient_pressure*-0.0443043) + (scaled_ambient_humidity*-0.379155) + (scaled_air_filter_di_fference_pressure*0.593596) + (scaled_gas_turbine_exhaust_pressure*0.328413) + (scaled_turbine_inlet_temperature*-0.987505) + (scaled_turbine_after_temperature*1.35337) + (scaled_turbine_energy_yield*0.882933) + (scaled_CO*-0.175156) );
+	var perceptron_layer_1_output_2 = Math.tanh( 0.431469 + (scaled_ambient_temperature*-0.0999057) + (scaled_ambient_pressure*0.13582) + (scaled_ambient_humidity*0.0109351) + (scaled_air_filter_di_fference_pressure*-0.0731824) + (scaled_gas_turbine_exhaust_pressure*0.516438) + (scaled_turbine_inlet_temperature*-0.715798) + (scaled_turbine_after_temperature*0.334144) + (scaled_turbine_energy_yield*-0.442496) + (scaled_CO*-0.369129) );
+	var perceptron_layer_1_output_3 = Math.tanh( -0.0981637 + (scaled_ambient_temperature*0.252855) + (scaled_ambient_pressure*-0.0125287) + (scaled_ambient_humidity*-0.253679) + (scaled_air_filter_di_fference_pressure*-0.697587) + (scaled_gas_turbine_exhaust_pressure*-0.157837) + (scaled_turbine_inlet_temperature*0.564888) + (scaled_turbine_after_temperature*-1.30342) + (scaled_turbine_energy_yield*-1.34226) + (scaled_CO*1.5704) );
+	var perceptron_layer_1_output_4 = Math.tanh( -0.259476 + (scaled_ambient_temperature*-0.470843) + (scaled_ambient_pressure*-0.272964) + (scaled_ambient_humidity*-0.253526) + (scaled_air_filter_di_fference_pressure*0.377247) + (scaled_gas_turbine_exhaust_pressure*-0.0695821) + (scaled_turbine_inlet_temperature*-0.379319) + (scaled_turbine_after_temperature*-0.000309811) + (scaled_turbine_energy_yield*-0.142314) + (scaled_CO*-0.169072) );
+	var perceptron_layer_1_output_5 = Math.tanh( -0.947733 + (scaled_ambient_temperature*0.43) + (scaled_ambient_pressure*-0.0865479) + (scaled_ambient_humidity*0.116354) + (scaled_air_filter_di_fference_pressure*-0.0647504) + (scaled_gas_turbine_exhaust_pressure*0.667274) + (scaled_turbine_inlet_temperature*0.654937) + (scaled_turbine_after_temperature*1.01807) + (scaled_turbine_energy_yield*0.818052) + (scaled_CO*-0.0773065) );
+	var perceptron_layer_1_output_6 = Math.tanh( -1.97194 + (scaled_ambient_temperature*0.481142) + (scaled_ambient_pressure*-0.139147) + (scaled_ambient_humidity*0.168919) + (scaled_air_filter_di_fference_pressure*0.0225099) + (scaled_gas_turbine_exhaust_pressure*-0.0823365) + (scaled_turbine_inlet_temperature*0.582238) + (scaled_turbine_after_temperature*0.96622) + (scaled_turbine_energy_yield*-1.07367) + (scaled_CO*0.0423755) );
+	var perceptron_layer_1_output_7 = Math.tanh( -0.654302 + (scaled_ambient_temperature*0.0107965) + (scaled_ambient_pressure*-0.218166) + (scaled_ambient_humidity*-0.12067) + (scaled_air_filter_di_fference_pressure*-0.00605676) + (scaled_gas_turbine_exhaust_pressure*-1.63209) + (scaled_turbine_inlet_temperature*2.47512) + (scaled_turbine_after_temperature*-0.703865) + (scaled_turbine_energy_yield*-0.798305) + (scaled_CO*0.791648) );
+	var perceptron_layer_1_output_8 = Math.tanh( 0.255455 + (scaled_ambient_temperature*0.10727) + (scaled_ambient_pressure*0.00233202) + (scaled_ambient_humidity*0.38321) + (scaled_air_filter_di_fference_pressure*0.594141) + (scaled_gas_turbine_exhaust_pressure*-0.176241) + (scaled_turbine_inlet_temperature*0.900328) + (scaled_turbine_after_temperature*0.196238) + (scaled_turbine_energy_yield*-0.483133) + (scaled_CO*-1.57369) );
+
+	var perceptron_layer_2_output_0 = ( 0.187898 + (perceptron_layer_1_output_0*1.03729) + (perceptron_layer_1_output_1*-0.657434) + (perceptron_layer_1_output_2*1.47082) + (perceptron_layer_1_output_3*0.972752) + (perceptron_layer_1_output_4*1.02519) + (perceptron_layer_1_output_5*0.83472) + (perceptron_layer_1_output_6*-1.53002) + (perceptron_layer_1_output_7*1.49679) + (perceptron_layer_1_output_8*0.923166) );
+
+	var unscaling_layer_output_0=perceptron_layer_2_output_0*11.67840004+65.29309845;
+
+
+	var NOx = unscaling_layer_output_0;
+	var out = [];
+	out.push(NOx);
+
+	return out;
+}
+
+function updateTextInput1(val, id)
+{
+	document.getElementById(id).value = val;
+}
+
+
+window.onresize = showDiv;
+
+
+</script>
+
+</body>
+
+</html>
