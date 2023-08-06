@@ -5,4 +5,4 @@
 
 <p>They appreciate the robust capabilities and user-friendly interface provided by these tools, which greatly facilitated this research project.</p>
 
-<p>Critical bus in a power system simulator:&nbsp;<strong><a href="http://htmlpreview.github.io/?https://github.com/mirsayedshah/230704/blob/main/simulator_model.html">http://htmlpreview.github.io/?https://github.com/mirsayedshah/230704/blob/main/simulator_model.html</a></strong></p>
+<p>Simulator:&nbsp;<strong><a href="https://htmlpreview.github.io/?https://github.com/mirsayedshah/230509/blob/main/appendix_a_online_simulator_for_nox_emissions_calculation.html">https://htmlpreview.github.io/?https://github.com/mirsayedshah/230509/blob/main/appendix_a_online_simulator_for_nox_emissions_calculation.html</a>&nbsp;</strong></p>
